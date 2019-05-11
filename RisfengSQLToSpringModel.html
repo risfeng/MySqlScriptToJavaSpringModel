@@ -6,16 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>RisfengSQL生成Spring实体小工具</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">Risfeng小工具</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -63,20 +61,17 @@
                                 <sup class="text-danger">*</sup>Package
                             </label>
                             <div class="col-sm-11">
-                                <input type="text" class="form-control" id="txt-package"
-                                    placeholder="eg:com.gaodun.storm.crm.domain.model.order">
+                                <input type="text" class="form-control" id="txt-package" placeholder="eg:com.gaodun.storm.crm.domain.model.order">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-1 col-form-label">Author</label>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" id="txt-author" placeholder="eg:Risfeng"
-                                    value="Risfeng">
+                                <input type="text" class="form-control" id="txt-author" placeholder="eg:Risfeng" value="Risfeng">
                             </div>
                             <label class="col-sm-1 col-form-label">Version</label>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" id="txt-version" placeholder="eg:1.0.0"
-                                    value="1.0.0">
+                                <input type="text" class="form-control" id="txt-version" placeholder="eg:1.0.0" value="1.0.0">
                             </div>
                             <label class="col-sm-1 col-form-label">Date</label>
                             <div class="col-sm-3">
@@ -110,8 +105,7 @@
                 <div class="col-lg-12">
                     <div class="form-group row">
                         <div class="col-lg-12">
-                            <textarea class="form-control" id="txt-model" placeholder="Spring Model"
-                                rows="27"></textarea>
+                            <textarea class="form-control" id="txt-model" placeholder="Spring Model" rows="27"></textarea>
                         </div>
                     </div>
                 </div>
@@ -121,28 +115,25 @@
     </div>
 
 
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
 
     <script>
-        $(function () {
+        $(function() {
             //时间赋值
             var today = getNowFormatDate();
             $('#txt-date').val(today);
 
-            $('#btn-clear').click(function () {
+            $('#btn-clear').click(function() {
                 clearAll();
             });
 
-            $('#btn-create-model').click(function () {
+            $('#btn-create-model').click(function() {
                 var isValid = check();
                 if (isValid) {
                     return;
@@ -150,13 +141,13 @@
                 createModelResult();
             });
 
-            $('#btn-demo').click(function () {
+            $('#btn-demo').click(function() {
 
             });
 
         });
 
-        var check = function () {
+        var check = function() {
             var package = $('#txt-package').val();
             var sql = $('#txt-sql').val();
             if (!package) {
@@ -181,7 +172,7 @@
             return false;
         };
 
-        var clearAll = function () {
+        var clearAll = function() {
             $('#txt-package').val('');
             $('#txt-author').val('');
             $('#txt-version').val('');
@@ -191,7 +182,7 @@
         };
 
         //获取当前时间
-        var getNowFormatDate = function (seperator) {
+        var getNowFormatDate = function(seperator) {
             var date = new Date();
             seperator = seperator || "/";
             var year = date.getFullYear();
@@ -208,7 +199,7 @@
         };
 
 
-        var analysisSql = function () {
+        var analysisSql = function() {
 
             var result = {
                 table: {
@@ -247,8 +238,19 @@
             result.table.camelName = toCamelCase(result.table.name);
             result.table.camelTitleCaseName = toCamelTitleCase(result.table.name);
             //表描述
-            var tableDesc = tableDescLine.match(/comment = (\S*);/i)[1];
-            result.table.desc = tableDesc.replace(replaceRegsignleQuotationG, '');
+            var tableDesc = tableDescLine.match(/comment = (\S*);/i);
+            if (!tableDesc) {
+                tableDesc = tableDescLine.match(/comment=(\S*);/i);
+            }
+            if (!tableDesc) {
+                tableDesc = tableDescLine.match(/comment= (\S*);/i);
+            }
+            if (tableDesc) {
+                tableDesc = tableDesc[1];
+                result.table.desc = tableDesc.replace(replaceRegsignleQuotationG, '');
+            }
+            console.log(tableDesc);
+
 
             //判断是否Id列正则
             var idColumnReg = new RegExp("AUTO_INCREMENT");
@@ -261,7 +263,7 @@
             var colDescReg = /COMMENT (\S*)[,|;]/i;
             var unsignedReg = new RegExp("UNSIGNED");
             //列字段处理
-            columLineArr.forEach(function (val, index) {
+            columLineArr.forEach(function(val, index) {
                 val = val.replace(replaceRegMoreSpaceToOne, ' ');
                 //设置主键所在行 直接跳过
                 if (primaryKeyRowReg.test(val) && !commentReg.test(val)) {
@@ -318,18 +320,18 @@
         };
 
         //首字母小写的驼峰
-        var toCamelCase = function (str) {
-            return str.replace(/([^_])(?:_+([^_]))/g, function ($0, $1, $2) {
+        var toCamelCase = function(str) {
+            return str.replace(/([^_])(?:_+([^_]))/g, function($0, $1, $2) {
                 return $1 + $2.toUpperCase();
             });
         };
         //驼峰首字母大写
-        var toCamelTitleCase = function (str) {
+        var toCamelTitleCase = function(str) {
             var camelCase = toCamelCase(str);
             return camelCase.replace(camelCase.charAt(0), camelCase.charAt(0).toUpperCase());
         };
         //dbType转java类型
-        var toJavaType = function (column) {
+        var toJavaType = function(column) {
             switch (column.dbType) {
                 case 'bit':
                 case 'tinyint':
@@ -395,10 +397,10 @@
             }
         };
 
-        var createModelResult = function () {
+        var createModelResult = function() {
             var tableInfo = analysisSql();
             var package = 'package ' + $('#txt-package').val() + ';';
-            var modelDesc = '* 订单转推荐申请';
+            var modelDesc = '* ' + tableInfo.table.desc;
             var author = '* @author ' + $('#txt-author').val();
             var version = '* @version ' + $('#txt-version').val();
             var date = '* @date ' + $('#txt-date').val();
@@ -438,7 +440,7 @@
             ];
 
             //生成列
-            tableInfo.columns.forEach(function (col, index) {
+            tableInfo.columns.forEach(function(col, index) {
                 var defaultValue = '';
                 resultArr.push('/**');
                 resultArr.push('* ' + col.desc);
@@ -465,7 +467,7 @@
         };
 
         //获取指定位数的随机数
-        var getRandom = function (num) {
+        var getRandom = function(num) {
             num = num || 10;
             var random = Math.floor((Math.random() + Math.floor(Math.random() * 9 + 1)) * Math.pow(10, num -
                 1));
